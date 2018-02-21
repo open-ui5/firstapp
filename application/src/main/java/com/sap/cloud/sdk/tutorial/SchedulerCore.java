@@ -20,8 +20,8 @@ public class SchedulerCore extends HttpServlet
 	private Scheduler scheduler = null;
 	
 	protected void SchedulerCore() {
-		SchedulerFactory sf = new StdSchedulerFactory();
-		scheduler = sf.getScheduler();
+//		SchedulerFactory sf = new StdSchedulerFactory();
+//		scheduler = sf.getScheduler();
 	}
 	
 	

@@ -3,7 +3,7 @@ package com.sap.cloud.sdk.tutorial;
 //import org.slf4j.Logger;
 //import java.io.IOException;
 
-import java.util.Date;
+//import java.util.Date;
 import org.quartz.StatefulJob;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;

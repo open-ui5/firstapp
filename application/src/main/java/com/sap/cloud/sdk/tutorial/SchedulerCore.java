@@ -9,9 +9,9 @@ package com.sap.cloud.sdk.tutorial;
 //import org.quartz.JobExecutionContext;
 import org.quartz.Scheduler;
 // import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
+//import org.quartz.SchedulerFactory;
 //import org.quartz.Trigger;
-import org.quartz.impl.StdSchedulerFactory;
+//import org.quartz.impl.StdSchedulerFactory;
 import javax.servlet.http.HttpServlet;
 
 public class SchedulerCore extends HttpServlet 

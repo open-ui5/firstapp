@@ -131,7 +131,6 @@ com.sap.security.core.server.csi,1.0.8,plugins/com.sap.security.core.server.csi_
 com.sap.xml.signature,1.0.7.rt2,plugins/com.sap.xml.signature_1.0.7.rt2.jar,4,false
 com.springsource.org.apache.commons.cli,1.2.0,plugins/com.springsource.org.apache.commons.cli_1.2.0.jar,4,false
 com.springsource.org.aspectj.weaver,1.6.12.RELEASE,plugins/com.springsource.org.aspectj.weaver_1.6.12.RELEASE.jar,4,false
-firstapp-application,0.0.0,webapps/firstapp-application/,5,true
 javassist,3.17.1.GA,plugins/javassist_3.17.1.GA.jar,4,false
 javax.annotation,1.1.0.v201108011116,plugins/javax.annotation_1.1.0.v201108011116.jar,4,false
 javax.ejb,3.1.1.v201204261316,plugins/javax.ejb_3.1.1.v201204261316.jar,4,false

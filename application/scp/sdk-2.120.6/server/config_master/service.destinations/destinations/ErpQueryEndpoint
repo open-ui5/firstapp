@@ -1,8 +1,7 @@
-#Mon Feb 12 14:43:42 CET 2018
-URL=https\://my300994.s4hana.ondemand.com
 Name=ErpQueryEndpoint
+URL=http://localhost:8080
 TrustAll=TRUE
 Type=HTTP
-Password=Blackline2018\!
+Password=Blackline2018!
 Authentication=BasicAuthentication
 User=EXTERNAL_USER

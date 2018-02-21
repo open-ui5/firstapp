@@ -1,6 +1,6 @@
 package com.sap.cloud.sdk.tutorial;
 
-import lombok.Data;
+//import lombok.Data;
 
 import com.sap.cloud.sdk.result.ElementName;
 

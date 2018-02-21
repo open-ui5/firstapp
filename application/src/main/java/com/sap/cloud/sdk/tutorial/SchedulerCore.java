@@ -1,16 +1,16 @@
 package com.sap.cloud.sdk.tutorial;
 
-import org.slf4j.Logger;
-import java.io.IOException;
+//import org.slf4j.Logger;
+//import java.io.IOException;
 
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
+//import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 
-import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
+//import org.quartz.JobDetail;
+//import org.quartz.JobExecutionContext;
 import org.quartz.Scheduler;
 // import org.quartz.SchedulerException;
 import org.quartz.SchedulerFactory;
-import org.quartz.Trigger;
+//import org.quartz.Trigger;
 import org.quartz.impl.StdSchedulerFactory;
 import javax.servlet.http.HttpServlet;
 
@@ -19,7 +19,7 @@ public class SchedulerCore extends HttpServlet
 	
 	private Scheduler scheduler = null;
 	
-	protected void SchedulerCore() throws Exception {
+	protected void SchedulerCore() {
 		SchedulerFactory sf = new StdSchedulerFactory();
 		scheduler = sf.getScheduler();
 	}

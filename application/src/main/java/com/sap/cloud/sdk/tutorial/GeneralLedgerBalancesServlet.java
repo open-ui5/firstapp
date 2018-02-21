@@ -13,12 +13,12 @@ import java.util.List;
 
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpEndpoint;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpConfigContext;
+//import com.sap.cloud.sdk.s4hana.connectivity.ErpConfigContext;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataProperty;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryBuilder;
 //import com.sap.cloud.sdk.odatav2.connectivity.ComplexFilterExpression;
-import com.sap.cloud.sdk.odatav2.connectivity.FilterExpression;
+//import com.sap.cloud.sdk.odatav2.connectivity.FilterExpression;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataType;
 
 

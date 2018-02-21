@@ -12,6 +12,7 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerFactory;
 import org.quartz.Trigger;
 import org.quartz.impl.StdSchedulerFactory;
+import javax.servlet.http.HttpServlet;
 
 public class SchedulerCore extends HttpServlet 
 {

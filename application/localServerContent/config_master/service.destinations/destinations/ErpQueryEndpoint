@@ -1,0 +1,7 @@
+Name=ErpQueryEndpoint
+URL=http://localhost:8080
+TrustAll=TRUE
+Type=HTTP
+Password=Blackline2018!
+Authentication=BasicAuthentication
+User=EXTERNAL_USER

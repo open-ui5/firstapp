@@ -1,0 +1,5 @@
+{ 
+"Config files" : [{"source":"trace.cfg"}],
+"Apply strategy" : "config admin",
+"Affected bundles" : ["com.sap.js.session.trace"]  
+}

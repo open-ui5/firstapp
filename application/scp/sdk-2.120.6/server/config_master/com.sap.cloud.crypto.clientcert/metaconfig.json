@@ -1,0 +1,4 @@
+{ "Affected bundles" : ["com.sap.cloud.crypto.clientcert.osgi.ClientCertManagedService"],
+  "Apply strategy" : "config admin",
+  "Config files" : [ { "source" : "clientcert_cfg.props" } ]
+}

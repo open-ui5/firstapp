@@ -1,0 +1,59 @@
+{"local.provider": {
+	"name":"local.provider.parse.test", 
+ 	"signing.private.key":"Base64EncodedPrivateKey",
+ 	"signing.certificate":"Base64EncodedCertificate",
+ 	"default.idp": "idp.parse.test",
+ 	"allow.http": "yes"
+ },
+ "trusted.providers": {
+  	"identity.providers": [
+  		{"name":"idp.parse.test",
+  		 "description":"Test IDP configuration",
+  		 "enabled": "true",
+  		 "sso.url":"https://test.sap.com/sso",
+  		 "sso.binding":"HTTP-Redirect",
+  		 "authn.request.acsurl" = "APP_URL",
+  		 "slo.url":"https://test.sap.com/slo",
+  		 "slo.binding":"HTTP-POST",
+  		 "userid.source":{
+  		 	"type":"subject", 
+  		 	"value":""
+  		 },
+  		 "userid.prefix":"",
+  		 "userid.suffix":"@sap.com",
+  		 "signature.algorithm":"SHA-256",
+  		 "signing.certificate":"Base64EncodedIdpCertificate",
+  		 "assertion.based.attributes":[
+  		 	{"assertion.attribute":"first_name",
+  		 	 "principal.attribute":"firstname"
+  		 	},
+  			{"assertion.attribute":"last_name",
+  			 "principal.attribute":"lastname"
+  			},
+  			{"assertion.attribute":"mail",
+  			 "principal.attribute":"email"
+  			}
+  		 ],
+  		 "default.attributes":[
+  			{"default.attribute":"company",
+  			 "value":"SAP AG"
+  			}
+  		 ],
+  		 "assertion.based.groups":[
+  			{"group":"TesterGroup",
+  			 "rules":[
+  			 	{"assertion.attribute":"mail",
+  			 	 "operation":"equals",
+  			 	 "value":"admin@test.sap.com"
+  			 	}
+  			 ]
+  			}
+  		 ],
+  		 "default.groups":[
+  			{"group":"Users"},
+  			{"group":"Developer"}
+  		 ]
+ 		}
+ 	]
+ }
+}

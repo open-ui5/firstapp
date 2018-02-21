@@ -1,0 +1,43 @@
+{
+	"local.provider" : {
+		"name" : "https://dev007.jpaas.sapbydesign.com/rado",
+		"signing.private.key" : "MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCxzpxbU5WCUjpotmSZaxkhRxB4BPA8ExUkkw20T2crI89PNgDFBHHVSDA+624pMR/fSPrISrpL+/PK+iGhq2lS2B5yA8Uvzg8Zsdlqv2MNb3qfzpp3ASvveB7TR2vPok9pdM0/EjBHV0c59B1glKfJ/oTyhPcvAJRSJoy1+jSI1emN+Q/geH4/AK5MPhmzrpyYeH6iGFQ8GAVQXbd6/JlLsPwJ1ANxAxIdzRJQMA1G3QDZjfZEwuRapta25yOx+nx3i/KFEYVGy3AjiRrPBnXH9HvADKf0FQSB1JTA2PTOWFb/eVhPqvABtngZG8pqLFqk8r6b5jYAEnsC04Tru6xTAgMBAAECggEAOjCr6xeHrobKpspKUgtCxilDsoOrO33jRXz61y/FS9EEX6AE0HWL64kcgPr7qm9xRtnTeQk7vvJN7ve9WfOHHJ2uGRIyzlpZhsc1qEHKYPNC5lnvI1M21cAyFmMhXWp5IsIfCa0iL7bYkJbbpmgAIZMyX0w0uSUvZVNIaaXg24bY/IVlBgTV/gxghZOkzmcZiFJ9a3bbX53HuhD6qrlQcOLT759I5E8p8/bCoLMfujiHGDppqSSr82ZTi53J01vnZ5D1+GuhBmffwVezWM3r8YLxhOEsbQdbqI34ID5zT8pBAn+FfC9k0xFamcEmtfBafbXX+yv7S4Ks7fGWUNcTwQKBgQD5IV9rSk1PQSY7QSdFWOAy7TTD188tUasAWGQJzAsAtvUTRq3E+9u0oMrxK/1Jw+RddZWQiay5xbmXJpYiO+S9EMl5mmc4EDI/PZh8cjJKN5CYR+aHYK17NReVYa3RsKvf5B42/aJx/yW2S1G9BcqCZkWRr9f2bwLc02snyhQ89QKBgQC2tcMpRb8j4XcpBIveKlkPcN/ILshCPj/crNGc7dJt97b7WlyqUJToxCMvR6aVhMhOZfUg16gzRSsKcy1S/kazCs0yPW7kP8EgXU4LTpYMD2afGllK5dweEbVBR2jHeDlk6FwV0VqxvAXBk2budxvZCCZHveNknx8tT/yCJr73JwKBgQDatEZtDMxzoBDtAdR014HykzS4HLN+6GwDIJWp2BtspDDfnDOecy+8EVA3ilOQN006EqibO5GLgJ3dqH0yTnwO0jbc7wRgPi+uPuenkCS/7KmeVbh17hQ9zi0G8bpDFCK+qScxRVYfV0sHDnYSR4wxD5FRRRqE941+yIcQZiGAJQKBgQCZf5zliL4rk9k7caFcVbGa4lZvZLZDyO54JAy6TacTUiC9jM37HFXuNBHnP8f5J6PtEYVeQTADWuHtFpSGfC/DbZi0053dTp6e5SSTJUO0ACBUHJvV68UA0hm4LRkfM6bsWrY6cjdCyNcBKSg5wYF41XrrnOF0gKZ9uAxI/+pB0wKBgQC0SxNFTddD8DfZzy2Wty+8vvETQnbMUA4UKFbUC9BISjQ81qcQj84owNUUCV+gXZDvxb3Dx4X3A+nK3IYC0w2mtX4ZsAVUcxDHvL9qqNxdHea5oBpS7B17Ma94Ke3RvAGLS7V0PCQUYZPQlPCPIijbqpv/zOiu8B0TaHzImfXjZg\u003d\u003d",
+		"signing.certificate" : "MIIDbjCCAlagAwIBAgIFAK38t+MwDQYJKoZIhvcNAQEFBQAwZzELMAkGA1UEBhMCREUxDzANBgNVBAoTBlNBUCBBRzETMBEGA1UECxMKSEFOQSBDbG91ZDEyMDAGA1UEAxMpaHR0cHM6Ly9kZXYwMDcuanBhYXMuc2FwYnlkZXNpZ24uY29tL3JhZG8wHhcNMTYxMDIwMDY1ODI0WhcNMjYxMDIwMDY1ODI0WjBnMQswCQYDVQQGEwJERTEPMA0GA1UEChMGU0FQIEFHMRMwEQYDVQQLEwpIQU5BIENsb3VkMTIwMAYDVQQDEylodHRwczovL2RldjAwNy5qcGFhcy5zYXBieWRlc2lnbi5jb20vcmFkbzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALHOnFtTlYJSOmi2ZJlrGSFHEHgE8DwTFSSTDbRPZysjz082AMUEcdVIMD7rbikxH99I+shKukv788r6IaGraVLYHnIDxS/ODxmx2Wq/Yw1vep/OmncBK+94HtNHa8+iT2l0zT8SMEdXRzn0HWCUp8n+hPKE9y8AlFImjLX6NIjV6Y35D+B4fj8Arkw+GbOunJh4fqIYVDwYBVBdt3r8mUuw/AnUA3EDEh3NElAwDUbdANmN9kTC5Fqm1rbnI7H6fHeL8oURhUbLcCOJGs8Gdcf0e8AMp/QVBIHUlMDY9M5YVv95WE+q8AG2eBkbymosWqTyvpvmNgASewLThOu7rFMCAwEAAaMhMB8wHQYDVR0OBBYEFBTlwKIt8xJtDDeBMkbyEs9bWeO9MA0GCSqGSIb3DQEBBQUAA4IBAQBQ8QY8zg58u/wX4sC9y30n0sA2Eb3FuT8zkK7qn1iCHdam2BpfrycwP18iQn2XcVm+jRzBcBgJ2B6uD2sws1yPMuPbbWJS02pEWkzfFxsZCigZob6gLLDcPi+igelOCwmlsgs+qcNwCEIza+9XX2cZEbVK+wHHpExRfluGIdM7u1zCwe7trJ7trXOlNeLROiJRd5ZbpfXs+bUUNo+BwyGYfDelRBxlnIxi/mvU1Syrkx/m6hE5qoCVLGfD2SXOWXwv1l4GROxGcaBWe6c/uDlUPRXZ6YLZXImzRWeV+ajXU/d4WB4ToJp63rOvy7g4LiIuCqVGsHFIlED6lDPDlhb8",
+		"default.idp" : "radocost.accounts400.ondemand.com",
+		"allow.a2a.sso" : "false",
+		"force.authentication" : "false",
+		"enable.mds" : "false",
+		"endpoints.url" : "https://authn.dev007.jpaas.sapbydesign.com",
+		"endpoints.url.extension" : "rado/rado",
+		"app.domains" : [{
+				"app.domain.slo.url" : "https://test.com/saml2/sp/slo/rado/rado"
+			}
+		]
+	},
+	"trusted.providers" : {
+		"identity.providers" : [{
+				"name" : "radocost.accounts400.ondemand.com",
+				"enabled" : "true",
+				"sso.url" : "https://radocost.accounts400.ondemand.com/saml2/idp/sso/radocost.accounts400.ondemand.com",
+				"sso.binding" : "HTTP-POST",
+				"authn.request.acsurl" : "APP_URL",
+				"slo.url" : "https://radocost.accounts400.ondemand.com/saml2/idp/slo/radocost.accounts400.ondemand.com",
+				"slo.binding" : "HTTP-POST",
+				"userid.source" : {
+					"type" : "subject",
+					"value" : ""
+				},
+				"userid.prefix" : "",
+				"userid.suffix" : "#radocost.accounts400.ondemand.com",
+				"signing.certificate" : "MIIDFjCCAf6gAwIBAQIGAU1m/RdwMA0GCSqGSIb3DQEBBQUAMEoxCzAJBgNVBAYTAkRFMQ8wDQYDVQQKEwZTQVAtU0UxKjAoBgNVBAMTIXJhZG9jb3N0LmFjY291bnRzNDAwLm9uZGVtYW5kLmNvbTAeFw0xNTA1MTgxMjI2MTJaFw0yNTA1MTgxMjI2MTJaMEoxCzAJBgNVBAYTAkRFMQ8wDQYDVQQKEwZTQVAtU0UxKjAoBgNVBAMTIXJhZG9jb3N0LmFjY291bnRzNDAwLm9uZGVtYW5kLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK3dE7jBpbXGs2US+QrZkhfAmazjUFPk7c/izNNzaFlU2O5t3Ng2hdxnzmh3z+MEKYD8wRjgYDdUBcCfnnmEuOUnyS4DI176buiVoNTkIEffRVwyzWnXiHx/SkMyE8NhB5kC+qM6mFhFk0gEoD36DclyvIsk13kjFYSo60GWtKIDGtjkGInjrE2g3O9MXl3+HZW7JNnGMq/xM2Pg5aMSUgPtUxE92JvDekmi+ib1+xImf3n5W0tOtR7gnXm+VeIdWfXGdatxpOjBtlyA6Bbsk5sqA00/btrCgibJl1s7XvO9Im6T9mrc6qvFuNyQWEBnJBRL00I/FpFeh0NMM1FLb9kCAwEAAYICAAAwDQYJKoZIhvcNAQEFBQADggEBAG1kIlBr6tocQ1wnQxGR5Lfhd5Ny36JOq/HJdgtvbJH91Wyf/20uIoUBu/3MkmmZMsjsGhGoW9LG5xF+YEURNZOybrX1mCv5QAT1/UH3DIeSA1/bRVQaWh00ma0qYpjryPbBqCwliydId5F0qnaSRXKVRPNZlC3XbwrB/FSg1iBUEAG5Xq+AzqYLz4fd/5CFFTFeAOqG8W4/8Ap17xNWzDxfzArGCaKoDg+PYCgsm5ZGV36bQ9TjG8tprmye511Jiq2c9JzQQd/TURYe8RKHrtqZ2n9rwED9SLpCwQc9AzPVQ0ag6Y0A+rZZkRVjZSjaZaCVldcbOz2DPAcIjSqghpE\u003d",
+				"assertion.based.attributes" : [],
+				"default.attributes" : [],
+				"assertion.based.groups" : [],
+				"default.groups" : [],
+				"type" : "SCI",
+				"host" : "radocost.accounts400.ondemand.com"
+			}
+		]
+	},
+	"configuration.type" : "Custom"
+}

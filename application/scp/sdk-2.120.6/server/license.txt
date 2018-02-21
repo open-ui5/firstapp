@@ -1,0 +1,14 @@
+Listed here are the sources for the open source modifications we did in this package.
+
+OpenEjb Core:
+All the changes in this bundle are downported from the Virgo project - http://git.eclipse.org/c/virgo/org.eclipse.virgo.eclipse-mirror.git/tree/hotfix/source/openejb-core_4.5.2/src
+
+Equinox:
+-org.eclipse.osgi
+All the changes in this bundle are either contributed or downported from the project's source repository - git://git.eclipse.org/gitroot/equinox/rt.equinox.framework.git
+
+XBean:
+org.apache.xbean.finder_3.12.0.sap-02
+org.apache.xbean.bundleutils_3.12.0.sap-01
+
+Contains fixes for https://issues.apache.org/jira/browse/XBEAN-250 and https://issues.apache.org/jira/browse/XBEAN-250, which are proposed to the community in the two bug reposrt, but are not approved yet.

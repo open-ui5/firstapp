@@ -1,0 +1,4 @@
+{ "Affected bundles" : ["com.sap.core.jpaas.security.auth.service.TenantSessionCookieConfigration"],
+  "Apply strategy" : "config admin",
+  "Config files" : [ { "source" : "tenant_session_cookie.properties" } ]
+}

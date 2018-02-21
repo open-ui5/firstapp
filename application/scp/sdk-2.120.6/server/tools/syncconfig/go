@@ -1,0 +1,14 @@
+@echo off
+java -version 2>&1 | findstr /I 1.6 > nul
+if errorlevel == 1 (
+echo JAVA version is not correct. The supported version must be at least 1.6.
+goto end
+)
+
+java -server 2>&1 | findstr /I Error: > nul
+if errorlevel == 1 (set JAVA_OPTS=-server)
+
+@echo on
+java %JAVA_OPTS% @LJS_OPTS@ -jar plugins/com.sap.js.startup.jar -console
+
+:end

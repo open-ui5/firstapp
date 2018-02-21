@@ -1,0 +1,4 @@
+{ "Affected bundles" : ["com.sap.core.jpaas.security.um.service.UserManagementConfiguration"],
+  "Apply strategy" : "config admin",
+  "Config files" : [ { "source" : "um_cfg.props" } ]
+}

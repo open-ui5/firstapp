@@ -1,0 +1,14 @@
+[2018-02-12 14:43:57.579] Start Level Event Dispatcher <OE0000I> Initialised enterprise container for application with context path '/oauth2.local'. 
+[2018-02-12 14:44:02.797] Start Level Event Dispatcher <OE0000I> Initialised enterprise container for application with context path '/saml2/localidp'. 
+[2018-02-12 14:44:06.679] Start Level Event Dispatcher <OE0000I> Initialised enterprise container for application with context path '/saml2/sp'. 
+[2018-02-12 14:44:08.271] Start Level Event Dispatcher <OE0000I> Initialised enterprise container for application with context path '/n'. 
+[2018-02-12 14:44:08.963] startup-tracker              <KE0001I> Kernel starting. 
+[2018-02-12 14:44:08.977] startup-tracker              <KE0002I> Kernel started. 
+[2018-02-12 14:44:09.006] startup-readiness            <KE0007I> Virgo ready. Started for 23.761s. 
+[2018-02-12 14:44:10.029] fs-watcher                   <HD0001I> Hot deployer processing 'INITIAL' event for file 'firstapp-application.war; '. 
+[2018-02-12 14:44:10.038] fs-watcher                   <DE0001I> Installing from 'C:\Users\robert.eijpe\Documents\SAP_SDK\firstapp\application\scp\sdk-2.120.6\server\pickup\firstapp-application.war'. 
+[2018-02-12 14:44:11.146] fs-watcher                   <DE0002I> Installed web bundle 'firstapp-application' version '0.0.0'. 
+[2018-02-12 14:44:11.147] fs-watcher                   <DE0009I> Starting web bundle 'firstapp-application' version '0.0.0'. 
+[2018-02-12 14:44:24.044] pool-3-thread-1              <DS0000W> Failed to satisfy declarative service component 'com.sap.core.connectivity.apiext.LdapOnPremiseSocketFactory' from origin bundle 'com.sap.core.connectivity.apiext_0.0.14.rt2 [32]'. 
+[2018-02-12 14:44:56.084] fs-watcher                   <OE0000I> Initialised enterprise container for application with context path ''. 
+[2018-02-12 14:44:57.710] fs-watcher                   <DE0010I> Started web bundle 'firstapp-application' version '0.0.0'. 

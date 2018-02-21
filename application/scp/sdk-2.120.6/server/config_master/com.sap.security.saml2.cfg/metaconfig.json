@@ -1,0 +1,5 @@
+{
+"Config files" : [{"source":"saml2.properties"}],
+"Apply strategy" : "managed service",
+"Affected bundles" : ["com.sap.security.saml2.cfg"]
+}

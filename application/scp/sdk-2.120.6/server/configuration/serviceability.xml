@@ -1,0 +1,86 @@
+<configuration>
+  <conversionRule conversionWord="a" converterClass="com.sap.core.js.logging.converter.ACHPatternConverter"/>
+	<conversionRule conversionWord="b" converterClass="com.sap.core.js.logging.converter.BundleNamePatternConverter"/>
+	<conversionRule conversionWord="s" converterClass="com.sap.core.js.logging.converter.DSRPatternConverter"/>
+	<conversionRule conversionWord="z" converterClass="com.sap.core.js.logging.converter.SpaceApplPatternConverter"/>
+	<conversionRule conversionWord="u" converterClass="com.sap.core.js.logging.converter.UserPatternConverter"/>
+	<conversionRule conversionWord="o" converterClass="com.sap.core.js.logging.converter.UTFOffsetPatternConverter"/>
+	
+	<jmxConfigurator />
+	
+	<appender name="LJS_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/ljs_trace.log</file>
+		<filter class="com.sap.core.js.logging.filter.LoggerMatchFilter">
+			<param name="LoggerToMatch" value="audit" />
+			<param name="AcceptOnMatch" value="false" />
+		</filter>		
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>log/ljs_trace_%i.log</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>4</MaxIndex>
+		</rollingPolicy>
+			<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+		<encoder class="com.sap.core.js.logging.LJSPatternLayoutEncoder">
+			<Pattern>%1d{yyyy MM dd HH:mm:ss}#%o#%p#%c#%a#%u#%t#%b#%z#%X{tenant_alias}#%s#%replace(%m%ex){'([\\|#])','\\$0'}%nopex|%n</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	
+	<appender name="jpaas_audit_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/jpaas_audit_log.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>log/jpaas_audit_log_%i.log</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>4</MaxIndex>
+		</rollingPolicy>
+			<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+		<encoder class="com.sap.core.js.logging.LJSPatternLayoutEncoder">
+			<Pattern>%1d{yyyy MM dd HH:mm:ss}#%o#%p#%c#%a#%u#%t#%b#%z#%X{tenant_alias}#%replace(%m){'([\\|#])','\\$0'}|%n</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<!--appender name="EVENT_LOG_STDOUT" class="org.eclipse.virgo.medic.log.logback.ReroutingAwareConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %-28.28thread &lt;%X{medic.eventCode}&gt; %msg %ex%n</Pattern>
+		</encoder>
+	</appender-->
+
+	<appender name="EVENT_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/eventlog.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>log/eventlog_%i.log</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>4</MaxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %-28.28thread &lt;%X{medic.eventCode}&gt; %msg %ex%n</Pattern>
+		</encoder>
+	</appender>
+
+	<logger level="INFO" additivity="false" name="org.eclipse.virgo.medic.eventlog.localized">
+		<!--appender-ref ref="EVENT_LOG_STDOUT" /-->
+		<appender-ref ref="EVENT_LOG_FILE" />
+	</logger>
+	
+	<logger level="ERROR" additivity="false" name="org.eclipse.virgo.medic.eventlog.default">
+		<appender-ref ref="LJS_LOG_FILE" />
+	</logger>
+
+	<logger level="ALL" additivity="false" name="audit">
+		<appender-ref ref="jpaas_audit_log" />
+	</logger>
+	
+	<root level="ERROR">
+		<appender-ref ref="LJS_LOG_FILE" />
+	</root>
+
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator"/>
+</configuration>

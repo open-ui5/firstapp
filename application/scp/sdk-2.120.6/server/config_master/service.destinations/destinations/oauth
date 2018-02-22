@@ -1,5 +1,0 @@
-Name=oauth
-ProxyType=Internet
-Type=HTTP
-Authentication=NoAuthentication
-URL=http://localhost:8080/oauth2.local/token/info

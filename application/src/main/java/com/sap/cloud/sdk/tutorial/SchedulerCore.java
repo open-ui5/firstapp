@@ -11,20 +11,26 @@ import org.quartz.SchedulerException;
 import org.quartz.SchedulerFactory;
 //import org.quartz.Trigger;
 import org.quartz.impl.StdSchedulerFactory;
-import javax.servlet.http.HttpServlet;
+
 
 
 // SAP Cloud logger
 import org.slf4j.Logger;
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-
-
+@WebServlet("/schedulerCore")
 public class SchedulerCore extends HttpServlet {
 
-	private static Scheduler scheduler = null;
-	private static boolean isRunning = false;
+	private static Scheduler BLscheduler = null;
+	private static boolean isAvailable = false;
+    private static final long serialVersionUID = 1L;
 
 	private static final Logger logger = CloudLoggerFactory.getLogger(SchedulerCore.class);
 
@@ -32,27 +38,47 @@ public class SchedulerCore extends HttpServlet {
 	protected void SchedulerCore() {
 
 	}
+	
+	
+    @Override
+    protected void doGet( final HttpServletRequest request, final HttpServletResponse response )
+        throws ServletException, IOException
+    {
+        logger.info("Check status of scheduler");
+        response.getWriter().write("Scheduler is available "+ String.valueOf(isAvailable));
+    }
 
-	protected void initialize() throws SchedulerException {
+	protected void initialize(SchedulerFactory sf) throws SchedulerException {
 		logger.info("initialize Scheduler");
-		if (scheduler == null) {
-			SchedulerFactory sf = new StdSchedulerFactory();
-			scheduler = sf.getScheduler();
-			scheduler.getListenerManager().addSchedulerListener(new BLSchedulerListener());
+		if (BLscheduler == null) {
+			BLscheduler = sf.getScheduler();
+			isAvailable = true;
+			addEventListeners();
 		}
 	}
 
-	public void run() {
+	protected void addEventListeners() throws SchedulerException {
+		if (BLscheduler == null) {
+			logger.info("add BlackLine Scheduler Listener");
+			BLscheduler.getListenerManager().addSchedulerListener(new BLSchedulerListener());
+		}
+	}
+
+	public void run(SchedulerFactory sf) {
 
 		// Start the scheduler
 		// Re
 		try {
-			initialize();
-			isRunning = true;
+			initialize(sf);
+			isAvailable = true;
 			logger.info("Scheduler is running");
+			
+			
+			
+			
 
 		} catch (SchedulerException se) {
-			isRunning = false;
+			isAvailable = false;
 			logger.error("Scheduler is not running", se);
 		}
 
@@ -84,15 +110,16 @@ public class SchedulerCore extends HttpServlet {
 		//
 
 	}
+	
+
 
 	public void stop() {
 
 	}
 
-	public void createJobs() {
-		// Here we need to read definition catalog of SAP and for every definition we
-		// have to schedule a Quatz Job (without a trigger)
-		// The
+	public void checkJobsInSAPAfterShutdown() {
+		// Here we have to check the actual status in SAP. If there are running jobs, this is meaning something did go wrong when stopped the last time.
+		// We have to update the status and plan a new run.
 
 	}
 

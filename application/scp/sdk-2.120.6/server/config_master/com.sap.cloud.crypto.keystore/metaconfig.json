@@ -1,4 +1,0 @@
-{ "Affected bundles" : ["com.sap.cloud.crypto.keystore.service.osgi.KeyStoreManagedService"],
-  "Apply strategy" : "config admin",
-  "Config files" : [ { "source" : "keystore_cfg.props" } ]
-}

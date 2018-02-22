@@ -1,4 +1,0 @@
-{ "Affected bundles" : ["com.sap.core.jpaas.security.saml2.service.SAML2ServiceConfiguration"],
-  "Apply strategy" : "config admin",
-  "Config files" : [ { "source" : "saml2.properties" } ]
-}

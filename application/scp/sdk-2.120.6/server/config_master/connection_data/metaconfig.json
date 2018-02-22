@@ -1,5 +1,0 @@
-{ 
-"Config files" : [{"source":"connection.properties"}],
-"Apply strategy" : "config admin",
-"Affected bundles" : ["com.sap.core.persistence.jpa"]
-}

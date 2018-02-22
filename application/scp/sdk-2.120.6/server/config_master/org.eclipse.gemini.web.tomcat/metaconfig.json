@@ -1,5 +1,0 @@
-{ 
-"Config files" : [{"source":"default-server.xml", "destination":"config/tomcat-server.xml"},{"source":"web.xml", "destination":"config/web.xml"}],
-"Apply strategy" : "stop and copy",
-"Affected bundles" : ["org.eclipse.gemini.web.tomcat", "org.eclipse.gemini.web.extender"]  
-}

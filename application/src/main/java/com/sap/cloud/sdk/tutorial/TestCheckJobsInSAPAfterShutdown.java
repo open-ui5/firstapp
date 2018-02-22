@@ -25,6 +25,8 @@ import com.sap.cloud.sdk.s4hana.connectivity.ErpEndpoint;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpConfigContext;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataType;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataProperty;
+import com.sap.cloud.sdk.odatav2.connectivity.ODataUpdateRequest;
+import com.sap.cloud.sdk.odatav2.connectivity.ODataUpdateRequestBuilder;
 
 @WebServlet("/testCheckJobsInSAPAfterShutdown")
 public class TestCheckJobsInSAPAfterShutdown extends HttpServlet {
@@ -32,8 +34,14 @@ public class TestCheckJobsInSAPAfterShutdown extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = CloudLoggerFactory.getLogger(TestCheckJobsInSAPAfterShutdown.class);
 
-    private static final String CATEGORY_PERSON = "1";
-    private static final String STATUS_RUNNING = "03";
+    private static final String STATUS_PLANNED    = "01";
+    private static final String STATUS_SCHEDULED  = "02";
+    private static final String STATUS_RUNNING    = "03";
+    private static final String STATUS_FINSHED    = "04";
+    private static final String STATUS_CANCELLING = "05";
+    private static final String STATUS_CANCELLED  = "06";
+    private static final String STATUS_ERROR      = "07";
+    private static final String STATUS_CRASHED    = "08";
 
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
@@ -58,6 +66,32 @@ public class TestCheckJobsInSAPAfterShutdown extends HttpServlet {
         		logger.info("SAP Jobs with status running found");
         	}
 
+
+         	for (YY1_BL_EXTRACT_RUNType sapJobRun : sapJobRunList) {
+
+         		Map<String,Object> keys = new HashMap<String, Object>();
+         		Map<String,Object> entityData = new HashMap<String, Object>();
+
+         		// Fill the key field for the updated record 
+         		keys.put("SAP_UUID",sapJobRun.getSapUuid());
+         		
+         		// Fill the field to be updated
+         		entityData.put("Status",STATUS_CRASHED);
+    	
+         		final ODataUpdateRequest updateRequest = ODataUpdateRequestBuilder
+         				.withEntity("/sap/opu/odata/sap/yy1_bl_extract_run_cds",
+         							"YY1_BL_EXTRACT_RUN", keys)
+         				.withBodyAsMap(entityData)
+         				.build();
+         		
+         		
+         		updateRequest.execute(endpoint);
+         		
+             	logger.info("Set to CRASHED: " + sapJobRun.getSapUuid() + ", ");
+    		}
+        	
+
+        	
             response.setContentType("application/json");
             response.getWriter().write(new Gson().toJson(sapJobRunList));
 

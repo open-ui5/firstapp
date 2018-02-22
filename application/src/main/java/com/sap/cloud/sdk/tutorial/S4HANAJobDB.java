@@ -8,6 +8,7 @@ import com.sap.cloud.sdk.s4hana.connectivity.ErpConfigContext;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataUpdateRequestBuilder;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataType;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataProperty;
+import com.sap.cloud.sdk.odatav2.connectivity.ODataUpdateRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -18,8 +19,14 @@ import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 
 public class S4HANAJobDB  {
 	
-    private static final String STATUS_RUNNING = "03";
-    private static final String STATUS_CRASHED = "05";
+    private static final String STATUS_PLANNED    = "01";
+    private static final String STATUS_SCHEDULED  = "02";
+    private static final String STATUS_RUNNING    = "03";
+    private static final String STATUS_FINSHED    = "04";
+    private static final String STATUS_CANCELLING = "05";
+    private static final String STATUS_CANCELLED  = "06";
+    private static final String STATUS_ERROR      = "07";
+    private static final String STATUS_CRASHED    = "08";
 
 	public static void checkJobsInSAPAfterShutdown() {
 	 try {
@@ -52,29 +59,23 @@ public class S4HANAJobDB  {
      	
      	for (YY1_BL_EXTRACT_RUNType sapJobRun : sapJobRunList) {
 
+
      		Map<String,Object> keys = new HashMap<String, Object>();
      		Map<String,Object> entityData = new HashMap<String, Object>();
-     		
-     		
      		// Fill the key field for the updated record 
      		keys.put("SAP_UUID",sapJobRun.getSapUuid());
      		
      		// Fill the field to be updated
-     		keys.put("Status",STATUS_CRASHED);
-     		
-     		
-     		
-     		int httpStatusCode = ODataUpdateRequestBuilder
+     		entityData.put("Status",STATUS_CRASHED);
+	
+     		final ODataUpdateRequest updateRequest = ODataUpdateRequestBuilder
      				.withEntity("/sap/opu/odata/sap/yy1_bl_extract_run_cds",
      							"YY1_BL_EXTRACT_RUN", keys)
-//     				.withHeader(String key, String value)
-     				.withBody(entityData)
-     				.build()
-         	        .execute(endpoint)
-         	        .getHttpStatusCode();
-			
-			
-			
+     				.withBodyAsMap(entityData)
+     				.build();
+     		
+     		
+     		updateRequest.execute(endpoint);
 			
 		}
 

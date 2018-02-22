@@ -58,7 +58,7 @@ public class SchedulerCore extends HttpServlet {
 	}
 
 	protected void addEventListeners() throws SchedulerException {
-		if (BLscheduler == null) {
+		if (BLscheduler != null) {
 			logger.info("add BlackLine Scheduler Listener");
 			BLscheduler.getListenerManager().addSchedulerListener(new BLSchedulerListener());
 		}

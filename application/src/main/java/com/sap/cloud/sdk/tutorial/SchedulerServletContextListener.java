@@ -25,14 +25,14 @@ public class SchedulerServletContextListener
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
-		logger.info("SchedulerServletContextListener destroyed");
+		logger.info("SCHEDULER: stopped");
 		scheduler.stop();
 	}
 
     //Run this before web application is started
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		logger.info("SchedulerServletContextListener started");	
+		logger.info("SCHEDULER: starting up");	
 		super.contextInitialized(sce);
 		ServletContext ctx = sce.getServletContext();
 		StdSchedulerFactory factory = (StdSchedulerFactory) ctx.getAttribute(QUARTZ_FACTORY_KEY);

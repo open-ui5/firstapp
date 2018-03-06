@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.sap.cloud.sdk.tutorial.HelloWorldServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.331 s - in com.sap.cloud.sdk.tutorial.HelloWorldServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.432 s - in com.sap.cloud.sdk.tutorial.HelloWorldServiceTest

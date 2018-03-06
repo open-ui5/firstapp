@@ -70,7 +70,8 @@ public class SchedulerCore extends HttpServlet {
 	protected void SchedulerCore() {
 
 	}
-
+	
+	
 	@Override
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
@@ -83,8 +84,6 @@ public class SchedulerCore extends HttpServlet {
 					S4HANAJobDB.updateJobsAfterTriggerFromSAP(request);
 				} catch (Exception e) {
 				logger.error("- Error during scheduling SAP jobs after trigger from S4HPC", e);
-				// REI >>>>>>>>>>>>>>>>>>>>>
-				// Graag geen 200 terug maar 401
 				response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 				response.getWriter().write("Error during action " + action + ". " + e);
 				return;
@@ -104,8 +103,8 @@ public class SchedulerCore extends HttpServlet {
 
 	protected void initialize(SchedulerFactory sf) throws SchedulerException {
 		logger.info("- initialize BlackLine Scheduler");
-		if (BLscheduler == null) {
-			BLscheduler = sf.getScheduler();
+		if (getScheduler() == null) {
+			setScheduler( sf.getScheduler() );
 			isAvailable = true;
 			addEventListeners();
 		}
@@ -115,10 +114,14 @@ public class SchedulerCore extends HttpServlet {
 		return BLscheduler;
 	}
 
+	protected static void setScheduler(Scheduler scheduler ) {
+		BLscheduler = scheduler;
+	}
+	
 	protected void addEventListeners() throws SchedulerException {
-		if (BLscheduler != null) {
+		if (getScheduler() != null) {
 			logger.info("- add BlackLine Scheduler Listener");
-			BLscheduler.getListenerManager().addSchedulerListener(new BLSchedulerListener());
+			getScheduler().getListenerManager().addSchedulerListener(new BLSchedulerListener());
 		}
 //		// ensure that the correct HystrixConcurrencyStrategy is used
 //		new ScpNeoHystrixBootstrapListener().bootstrap();
@@ -129,11 +132,11 @@ public class SchedulerCore extends HttpServlet {
 
 			initialize(sf);
 			isAvailable = true;
-			BLscheduler.start();
+			getScheduler().start();
 			logger.info("SCHEDULER: running");
 		} catch (SchedulerException se) {
 			isAvailable = false;
-			BLscheduler = null;
+			setScheduler( null );
 			logger.error("SCHEDULER: not running", se);
 		}
 	}
@@ -256,15 +259,12 @@ public class SchedulerCore extends HttpServlet {
 		// Add job scheduler. If exception then status to ERROR: scheduling job listener
 		// + exception
 		// =================================================================================================================================================
-
-		// try {
-		// getScheduler().getListenerManager().addJobListener(new
-		// BLJobListener(job.getKey()),
-		// KeyMatcher.keyEquals(job.getKey()));
-		// } catch (SchedulerException e) {
+		try {
+			getScheduler().getListenerManager().addJobListener(new BLJobListener(job.getKey()), KeyMatcher.keyEquals(job.getKey()));
+		} catch (SchedulerException e) {
 		//
 		// e.printStackTrace();
-		// }
+		}
 
 		// =================================================================================================================================================
 		// Schedule job. If exception then status to ERROR: scheduling job + exception
